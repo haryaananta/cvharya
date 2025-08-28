@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | CV Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">CV Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Saya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">Pendidikan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pengalaman.html">Pengalaman</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portofolio.html">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    <li class="nav-item ms-lg-3"><i class="fas fa-moon" id="theme-toggler"></i></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Portofolio Proyek</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="images/project1.png" class="card-img-top" alt="Proyek 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Design Packaging </h5>
+                            <p class="card-text text-secondary-color">Membuat design packaging menggunakan aplikasi corel draw.</p>
+                            <a href="#" class="btn btn-custom btn-sm">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100">
+                        <img src="images/project2.png" class="card-img-top" alt="Proyek 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Memuat Prototype</h5>
+                            <p class="card-text text-secondary-color">Membuat prototype alur pemesanan tiket serulingmas Banjarnegara.</p>
+                            <a href="#" class="btn btn-custom btn-sm">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card h-100">
+                        <img src="images/project3.png" class="card-img-top" alt="Proyek 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Excel</h5>
+                            <p class="card-text text-secondary-color">Saya dapat menggunakan exel dengan beberapa rumus dasar.</p>
+                            <a href="#" class="btn btn-custom btn-sm">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-secondary-color">
+        <div class="container">
+            <p>&copy; 2025 MazDarma. Dibuat dengan <i class="fas fa-heart"></i>.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script>
+        const themeToggler = document.getElementById('theme-toggler');
+        const body = document.body;
+        const applyTheme = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggler.classList.remove('fa-moon');
+                themeToggler.classList.add('fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                themeToggler.classList.remove('fa-sun');
+                themeToggler.classList.add('fa-moon');
+            }
+        };
+        const toggleTheme = () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+                themeToggler.classList.remove('fa-sun');
+                themeToggler.classList.add('fa-moon');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                themeToggler.classList.remove('fa-moon');
+                themeToggler.classList.add('fa-sun');
+            }
+        };
+        themeToggler.addEventListener('click', toggleTheme);
+        document.addEventListener('DOMContentLoaded', applyTheme);
+    </script>
+</body>
+</html>
